@@ -17,7 +17,17 @@ use signal_frame::signal_channel;
 pub use signal_introspect::IntrospectDaemonConfiguration;
 
 #[derive(
-    Archive, RkyvSerialize, RkyvDeserialize, Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord,
+    Archive,
+    RkyvSerialize,
+    RkyvDeserialize,
+    Debug,
+    Clone,
+    Copy,
+    PartialEq,
+    Eq,
+    Hash,
+    PartialOrd,
+    Ord,
 )]
 pub struct ConfigurationGeneration(u64);
 
