@@ -23,6 +23,9 @@ nota-next    = { git = "https://github.com/LiGoldragon/nota-next.git", branch = 
 rkyv         = { version = "0.8", default-features = false, features = ["std", "bytecheck", "little_endian", "pointer_width_32", "unaligned"] }
 thiserror    = "2"
 
+[dev-dependencies]
+signal-persona = { git = "https://github.com/LiGoldragon/signal-persona.git", branch = "main" }
+
 [lints.rust]
 unsafe_code = "forbid"
 unused      = { level = "warn", priority = -1 }
