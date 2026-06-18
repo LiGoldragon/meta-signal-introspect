@@ -6,8 +6,8 @@ use signal_frame::{
     ExchangeIdentifier, ExchangeLane, LaneSequence, NonEmpty, Reply, RequestPayload, SessionEpoch,
     SignalOperationHeads, SubReply,
 };
-use signal_persona::origin::{OwnerIdentity, UnixUserIdentifier};
-use signal_persona::{SocketMode, WirePath};
+use signal_introspect::{SocketMode, WirePath};
+use signal_persona::{OwnerIdentity, UnixUserIdentifier};
 
 fn exchange() -> ExchangeIdentifier {
     ExchangeIdentifier::new(
