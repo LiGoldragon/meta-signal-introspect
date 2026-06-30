@@ -10,4 +10,4 @@ binary startup message), with `Configured` / `ConfigurationRejected` /
 `RequestUnimplemented` replies.
 
 Default builds carry `nota-text` for CLI/debug projection; the wire is
-binary/rkyv. See `INTENT.md`.
+binary/rkyv. See `ARCHITECTURE.md`.

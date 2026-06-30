@@ -2,12 +2,27 @@
 
 Meta policy Signal contract for privileged `introspect` daemon configuration.
 
+## Direction
+
+This repo is the second leg of the introspect contract pair. Every Persona
+component has exactly two contracts: the ordinary `signal-<component>` and the
+meta `meta-signal-<component>`. `meta-signal-introspect` is the authority surface
+that configures the `introspect-daemon`, including the peer-daemon set the
+inspection plane fans out to and the daemon's own `introspect.sema` location;
+before it, `introspect` had only its ordinary contract.
+
+Peer-daemon registration is daemon configuration, so it lives inside the
+`Configure` payload rather than as bespoke operations. The rejection reason set
+therefore includes `UnknownPeerComponent` for a configuration that names a peer
+the daemon cannot resolve.
+
 ## Surface
 
 This crate owns the meta channel for `introspect`:
 
 - request: `Configure(IntrospectDaemonConfiguration)`;
-- replies: `Configured`, `ConfigurationRejected`, `RequestUnimplemented`;
+- replies: `Configured`, `ConfigurationRejected` (typed reason, including
+  `UnknownPeerComponent`), `RequestUnimplemented`;
 - the typed configuration generation and rejection/unimplemented reason enums.
 
 `IntrospectDaemonConfiguration` is imported from `signal-introspect`. The same
@@ -44,6 +59,5 @@ actors, storage, peer fan-out, and CLI behavior live in `introspect`.
 ```text
 src/lib.rs          handwritten meta contract surface
 tests/round_trip.rs frame and NOTA witnesses
-INTENT.md           repo-scope intent
 ```
 
