@@ -103,7 +103,7 @@ fn meta_introspect_replies_round_trip_through_length_prefixed_frame() {
 #[cfg(feature = "nota-text")]
 #[test]
 fn meta_introspect_operations_encode_as_contract_local_nota_heads() {
-    use nota_next::{NotaEncode, NotaSource};
+    use nota::{NotaEncode, NotaSource};
 
     let request = Operation::Configure(configuration());
     let text = request.to_nota();
