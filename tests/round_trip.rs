@@ -27,6 +27,7 @@ fn configuration() -> IntrospectDaemonConfiguration {
         manager_socket_path: WirePath::new(""),
         router_socket_path: WirePath::new("/run/persona/router.sock"),
         terminal_socket_path: WirePath::new(""),
+        trace_socket_path: WirePath::new(""),
         owner_identity: OwnerIdentity::UnixUser(UnixUserIdentifier::new(1000)),
     }
 }
