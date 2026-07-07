@@ -1,8 +1,5 @@
 # meta-signal-introspect — Agent Instructions
 
-Read `/home/li/primary/AGENTS.md` first, then
-`/home/li/primary/repos/lore/AGENTS.md`.
-
 ## Purpose
 
 `meta-signal-introspect` is the meta policy contract for privileged
