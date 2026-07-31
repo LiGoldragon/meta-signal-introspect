@@ -16,3 +16,9 @@ component.
 - The daemon configuration type is owned by `signal-introspect`; this crate
   imports it rather than duplicating it.
 
+
+## Protos estate status
+
+Stack: correct-new destination
+Status: active component contract, current checkout legacy-wired
+This checkout is not proof of correct-new adoption.
