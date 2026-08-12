@@ -9,5 +9,5 @@ carrying `introspect`'s `*DaemonConfiguration` (the same record that is the daem
 binary startup message), with `Configured` / `ConfigurationRejected` /
 `RequestUnimplemented` replies.
 
-Default builds carry `nota-text` for CLI/debug projection; the wire is
+Default builds carry `dotos-text` for CLI/debug projection; the wire is
 binary/rkyv. See `ARCHITECTURE.md`.

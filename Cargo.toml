@@ -13,13 +13,13 @@ name = "meta_signal_introspect"
 path = "src/lib.rs"
 
 [features]
-default = ["nota-text"]
-nota-text = ["signal-frame/nota-text"]
+default = ["dotos-text"]
+dotos-text = ["signal-frame/dotos-text"]
 
 [dependencies]
 signal-frame = { git = "https://github.com/LiGoldragon/signal-frame.git", branch = "main" }
 signal-introspect    = { git = "https://github.com/LiGoldragon/signal-introspect.git", branch = "main" }
-nota    = { git = "https://github.com/LiGoldragon/nota.git", branch = "main" }
+dotos    = { git = "https://github.com/LiGoldragon/dotos.git", rev = "1facca44fbcb" }
 rkyv         = { version = "0.8", default-features = false, features = ["std", "bytecheck", "little_endian", "pointer_width_32", "unaligned"] }
 thiserror    = "2"
 

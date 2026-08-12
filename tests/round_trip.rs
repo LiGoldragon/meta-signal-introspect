@@ -101,16 +101,16 @@ fn meta_introspect_replies_round_trip_through_length_prefixed_frame() {
     }
 }
 
-#[cfg(feature = "nota-text")]
+#[cfg(feature = "dotos-text")]
 #[test]
-fn meta_introspect_operations_encode_as_contract_local_nota_heads() {
-    use nota::{NotaEncode, NotaSource};
+fn meta_introspect_operations_encode_as_contract_local_dotos_heads() {
+    use dotos::{DotosEncode, DotosSource};
 
     let request = Operation::Configure(configuration());
-    let text = request.to_nota();
+    let text = request.to_dotos();
     assert!(text.starts_with("(Configure"));
-    let decoded = NotaSource::new(&text)
+    let decoded = DotosSource::new(&text)
         .parse::<Operation>()
-        .expect("decode request nota");
+        .expect("decode request dotos");
     assert_eq!(decoded, request);
 }

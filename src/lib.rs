@@ -11,7 +11,7 @@
 //! binary startup message, and later reconfiguration arrives over this meta
 //! plane as the same typed record, never as flags.
 
-use nota::{Block, NotaBlock, NotaDecode, NotaDecodeError, NotaEncode};
+use dotos::{Block, DotosBlock, DotosDecode, DotosDecodeError, DotosEncode};
 use rkyv::{Archive, Deserialize as RkyvDeserialize, Serialize as RkyvSerialize};
 use signal_frame::signal_channel;
 pub use signal_introspect::IntrospectDaemonConfiguration;
@@ -41,20 +41,20 @@ impl ConfigurationGeneration {
     }
 }
 
-impl NotaDecode for ConfigurationGeneration {
-    fn from_nota_block(block: &Block) -> Result<Self, NotaDecodeError> {
-        Ok(Self(NotaBlock::new(block).parse_integer()?))
+impl DotosDecode for ConfigurationGeneration {
+    fn from_dotos_block(block: &Block) -> Result<Self, DotosDecodeError> {
+        Ok(Self(DotosBlock::new(block).parse_integer()?))
     }
 }
 
-impl NotaEncode for ConfigurationGeneration {
-    fn to_nota(&self) -> String {
+impl DotosEncode for ConfigurationGeneration {
+    fn to_dotos(&self) -> String {
         self.0.to_string()
     }
 }
 
 #[derive(
-    Archive, RkyvSerialize, RkyvDeserialize, NotaEncode, NotaDecode, Debug, Clone, PartialEq, Eq,
+    Archive, RkyvSerialize, RkyvDeserialize, DotosEncode, DotosDecode, Debug, Clone, PartialEq, Eq,
 )]
 pub struct Configured {
     pub generation: ConfigurationGeneration,
@@ -64,8 +64,8 @@ pub struct Configured {
     Archive,
     RkyvSerialize,
     RkyvDeserialize,
-    NotaEncode,
-    NotaDecode,
+    DotosEncode,
+    DotosDecode,
     Debug,
     Clone,
     Copy,
@@ -80,7 +80,7 @@ pub enum ConfigurationRejectionReason {
 }
 
 #[derive(
-    Archive, RkyvSerialize, RkyvDeserialize, NotaEncode, NotaDecode, Debug, Clone, PartialEq, Eq,
+    Archive, RkyvSerialize, RkyvDeserialize, DotosEncode, DotosDecode, Debug, Clone, PartialEq, Eq,
 )]
 pub struct ConfigurationRejected {
     pub reason: ConfigurationRejectionReason,
@@ -90,8 +90,8 @@ pub struct ConfigurationRejected {
     Archive,
     RkyvSerialize,
     RkyvDeserialize,
-    NotaEncode,
-    NotaDecode,
+    DotosEncode,
+    DotosDecode,
     Debug,
     Clone,
     Copy,
@@ -104,7 +104,7 @@ pub enum UnimplementedReason {
     DependencyNotReady,
 }
 
-#[cfg_attr(feature = "nota-text", derive(NotaEncode, NotaDecode))]
+#[cfg_attr(feature = "dotos-text", derive(DotosEncode, DotosDecode))]
 #[derive(Archive, RkyvSerialize, RkyvDeserialize, Debug, Clone, PartialEq, Eq)]
 pub struct RequestUnimplemented {
     pub operation: OperationKind,

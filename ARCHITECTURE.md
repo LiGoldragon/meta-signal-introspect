@@ -47,10 +47,10 @@ actors, storage, peer fan-out, and CLI behavior live in `introspect`.
 
 - The meta operation is a contract-local `Configure` root, not a public Sema
   class wrapper.
-- Configuration is typed and binary on the daemon boundary; inline NOTA remains
+- Configuration is typed and binary on the daemon boundary; inline DOTOS remains
   a client/authoring surface.
-- Default builds currently retain the older NOTA-enabled contract shape; the
-  destination is binary-by-default with `nota-text` as an explicit edge feature
+- Default builds currently retain the older DOTOS-enabled contract shape; the
+  destination is binary-by-default with `dotos-text` as an explicit edge feature
   when this crate migrates to schema-derived output.
 - All request and reply variants need frame round-trip witnesses.
 
@@ -58,6 +58,6 @@ actors, storage, peer fan-out, and CLI behavior live in `introspect`.
 
 ```text
 src/lib.rs          handwritten meta contract surface
-tests/round_trip.rs frame and NOTA witnesses
+tests/round_trip.rs frame and DOTOS witnesses
 ```
 

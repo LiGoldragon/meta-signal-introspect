@@ -302,7 +302,7 @@ checksum = "88904434abc2901f197fe8cc55f0445e7ded921dba5911dad2e2b39b48e663c4"
 name = "meta-signal-introspect"
 version = "0.1.0"
 dependencies = [
- "nota",
+ "dotos",
  "rkyv",
  "signal-frame",
  "signal-introspect",
@@ -342,18 +342,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "nota"
+name = "dotos"
 version = "0.5.1"
-source = "git+https://github.com/LiGoldragon/nota.git?branch=main#bea7e2840ac2cf3e384f07b5c10eeb0890cead25"
+source = "git+https://github.com/LiGoldragon/dotos.git?branch=main#bea7e2840ac2cf3e384f07b5c10eeb0890cead25"
 dependencies = [
- "nota-derive",
+ "dotos-derive",
  "rkyv",
 ]
 
 [[package]]
-name = "nota-derive"
+name = "dotos-derive"
 version = "0.3.0"
-source = "git+https://github.com/LiGoldragon/nota.git?branch=main#bea7e2840ac2cf3e384f07b5c10eeb0890cead25"
+source = "git+https://github.com/LiGoldragon/dotos.git?branch=main#bea7e2840ac2cf3e384f07b5c10eeb0890cead25"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -499,7 +499,7 @@ version = "0.2.0"
 source = "git+https://github.com/LiGoldragon/schema.git?branch=main#a393c8c822cea737d7ed8e823eae7d821ea19bf2"
 dependencies = [
  "blake3",
- "nota",
+ "dotos",
  "rkyv",
  "schema-cc",
  "thiserror",
@@ -510,7 +510,7 @@ name = "schema-cc"
 version = "0.1.0"
 source = "git+https://github.com/LiGoldragon/schema.git?branch=main#a393c8c822cea737d7ed8e823eae7d821ea19bf2"
 dependencies = [
- "nota",
+ "dotos",
  "prettyplease",
  "proc-macro2",
  "quote",
@@ -523,7 +523,7 @@ name = "schema-rust"
 version = "0.5.3"
 source = "git+https://github.com/LiGoldragon/schema-rust.git?branch=main#72c71ffc558fee0d29c5b0517013de46e0307597"
 dependencies = [
- "nota",
+ "dotos",
  "prettyplease",
  "proc-macro2",
  "quote",
@@ -574,7 +574,7 @@ name = "signal-frame"
 version = "0.3.0"
 source = "git+https://github.com/LiGoldragon/signal-frame.git?branch=main#44d22a07e75e6d2ff13581a5bb84d47c6ef35e97"
 dependencies = [
- "nota",
+ "dotos",
  "paste",
  "rkyv",
  "signal-frame-macros",
@@ -596,7 +596,7 @@ name = "signal-introspect"
 version = "0.1.0"
 source = "git+https://github.com/LiGoldragon/signal-introspect.git?branch=main#3218655d675fefa1cb549286ed03f25fc2a67013"
 dependencies = [
- "nota",
+ "dotos",
  "rkyv",
  "signal-frame",
  "signal-message",
@@ -610,7 +610,7 @@ name = "signal-message"
 version = "0.3.0"
 source = "git+https://github.com/LiGoldragon/signal-message.git?branch=main#0bd080fcd739bde92dbb76b83a6084541a31675a"
 dependencies = [
- "nota",
+ "dotos",
  "rkyv",
  "schema-rust",
  "signal-frame",
@@ -622,7 +622,7 @@ name = "signal-persona"
 version = "0.2.0"
 source = "git+https://github.com/LiGoldragon/signal-persona.git?branch=main#9de82cd3a11270dd3c38ed507553c78ea703b25f"
 dependencies = [
- "nota",
+ "dotos",
  "rkyv",
  "schema-rust",
  "signal-frame",
