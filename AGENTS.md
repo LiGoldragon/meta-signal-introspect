@@ -12,13 +12,9 @@ component.
 - Keep runtime code out of this crate: no actors, sockets, tokio tasks, store
   handles, or filesystem mutation.
 - Keep ordinary introspection requests in `signal-introspect`.
-- Every contract change needs a frame round-trip witness in tests.
+- The contract lives in `ethos/signal.ethos`. Change it there and regenerate
+  `src/generated/signal.rs` with `ethos-zero`; never hand-edit generated Rust
+  and never hand-write a `Datomic` implementation for a declared type.
+- Every contract change needs a frame round-trip witness in `tests/contract.rs`.
 - The daemon configuration type is owned by `signal-introspect`; this crate
   imports it rather than duplicating it.
-
-
-## Protos estate status
-
-Stack: correct-new destination
-Status: active component contract, current checkout legacy-wired
-This checkout is not proof of correct-new adoption.

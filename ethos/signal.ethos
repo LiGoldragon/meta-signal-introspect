@@ -1,0 +1,5 @@
+Signal
+[ signal_introspect:[ IntrospectDaemonConfiguration ] ]
+[ Configure.IntrospectDaemonConfiguration ]
+[ Configured.Configured ConfigurationRejected.ConfigurationRejected RequestUnimplemented.RequestUnimplemented ]
+[ ConfigurationGeneration.Integer Configured.{ ConfigurationGeneration } ConfigurationRejectionReason.[ ManagerAuthorityRequired MalformedConfiguration UnknownPeerComponent ] ConfigurationRejected.{ ConfigurationRejectionReason } MetaIntrospectOperationKind.[ Configure ] UnimplementedReason.[ NotBuiltYet DependencyNotReady ] RequestUnimplemented.{ MetaIntrospectOperationKind UnimplementedReason } ]

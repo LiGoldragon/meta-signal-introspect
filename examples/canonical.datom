@@ -1,0 +1,6 @@
+; Canonical Datom examples for meta-signal-introspect.
+
+Configure.{ /run/persona/introspect.sock 384 /run/persona/introspect-meta.sock 384 /var/lib/persona/introspect.sema /run/persona/manager.sock /run/persona/router.sock /run/persona/terminal.sock /run/persona/trace.sock UnixUser.1000 }
+Configured.3
+ConfigurationRejected.UnknownPeerComponent
+RequestUnimplemented.{ Configure NotBuiltYet }
