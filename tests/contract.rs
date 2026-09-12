@@ -74,3 +74,40 @@ fn query_round_trips_as_datom_text() {
         .expect("Datom restores");
     assert_eq!(restored, query);
 }
+
+#[cfg(feature = "datom")]
+#[test]
+fn every_canonical_datom_line_actualizes_into_a_contract_head() {
+    use datom_codec::{Actualizing, Budget, Potential};
+    use protos::ReaderBudget;
+
+    fn budget() -> Budget {
+        Budget {
+            remaining: 4096,
+            reader: ReaderBudget { remaining: 4096 },
+            depth: 0,
+            maximum_depth: 1024,
+        }
+    }
+
+    let canonical = include_str!("../examples/canonical.datom");
+    let mut lines = 0;
+    for line in canonical.lines() {
+        let line = line.trim();
+        if line.is_empty() || line.starts_with(';') {
+            continue;
+        }
+        lines += 1;
+        let as_query = Potential::<Query>::from(line.to_owned())
+            .actualize(&mut budget())
+            .is_ok();
+        let as_response = Potential::<Response>::from(line.to_owned())
+            .actualize(&mut budget())
+            .is_ok();
+        assert!(
+            as_query || as_response,
+            "canonical line is neither a Query nor a Response: {line}"
+        );
+    }
+    assert_eq!(lines, 4, "canonical file should carry four contract heads");
+}
